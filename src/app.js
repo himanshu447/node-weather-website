@@ -3,7 +3,9 @@ const path = require('path');
 const hbs = require('hbs');
 const geoCode = require('../utils/geocode');
 const geoWeather = require('../utils/geoweather');
+
 const app = express();
+const port = process.env.PORT || 3000;
 
 //Define path for express config
 const publicDirectoryPath = path.join(__dirname, '../public');
@@ -92,6 +94,6 @@ app.get('/*', (req, res) => {
     });
 });
 
-app.listen(3000, () => {
-    console.log('SERVER STAR');
+app.listen(port, () => {
+    console.log('Server Start in ' + port);
 })
